@@ -1,5 +1,7 @@
-const dgram = require ('node:dgram');
-const server = dgram.createSocket=('udp4');
+// Importar el módulo dgram
+const dgram = require('node:dgram');
+// Crear el socket server
+const server = dgram.createSocket('udp4');
 
 server.on('error', (err) => {
   console.error(`server error:\n${err.stack}`);
@@ -7,12 +9,12 @@ server.on('error', (err) => {
 });
 
 server.on('message', (msg, rinfo) => {
-  console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
+  console.log(`server recibio: ${msg} from ${rinfo.address}:${rinfo.port}`);
 });
 
 server.on('listening', () => {
   const address = server.address();
-  console.log(`server listening ${address.address}:${address.port}`);
+  console.log(`server escuchando ${address.address}:${address.port}`);
 });
 
-server.bind('41234');
+server.bind(41234);

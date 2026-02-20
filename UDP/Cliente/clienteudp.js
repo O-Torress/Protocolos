@@ -1,16 +1,14 @@
 // Importar el módulo dgram
 const dgram = require('dgram');
-
 // Crear el socket cliente
 const client = dgram.createSocket('udp4');
 
 // Mensaje a enviar
 const message = Buffer.from('Hola servidor');
-const PORT = 3000;
-const HOST = 'localhost';
+const PORT = 41234;
 
 // Enviar mensaje
-client.send(message, PORT, HOST, (err) => {
+client.send(message, PORT, (err) => {
   if (err) {
     console.error('Error al enviar:', err);
     client.close();
