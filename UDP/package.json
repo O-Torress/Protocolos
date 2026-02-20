@@ -1,0 +1,17 @@
+{
+  "name": "udp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "node Server/serverudp.js",
+    "client": "node Cliente/clienteudp.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "nodemailer": "^8.0.1"
+  }
+}
